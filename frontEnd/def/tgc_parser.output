@@ -1,0 +1,275 @@
+Terminals unused in grammar
+
+   ORB
+   CRB
+   COMMA
+
+
+Grammar
+
+    0 $accept: Goal "end of file"
+
+    1 Goal: Stmt
+    2     | "end of file"
+
+    3 Stmt: Expr NEWLINE
+    4     | error NEWLINE
+    5     | Dec NEWLINE
+
+    6 Expr: Expr ADD Term
+    7     | Expr SUB Term
+    8     | Term
+
+    9 Term: Term MULTI NUMBER
+   10     | Term DIVIDE NUMBER
+   11     | NUMBER
+
+   12 Dec: varType ID
+
+   13 varType: INT
+   14        | FLOAT
+
+
+Terminals, with rules where they appear
+
+"end of file" (0) 0 2
+error (256) 4
+ID (258) 12
+ORB (259)
+CRB (260)
+COMMA (261)
+NEWLINE (262) 3 4 5
+NUMBER (263) 9 10 11
+ADD (264) 6
+SUB (265) 7
+MULTI (266) 9
+DIVIDE (267) 10
+INT (268) 13
+FLOAT (269) 14
+
+
+Nonterminals, with rules where they appear
+
+$accept (15)
+    on left: 0
+Goal (16)
+    on left: 1 2, on right: 0
+Stmt (17)
+    on left: 3 4 5, on right: 1
+Expr (18)
+    on left: 6 7 8, on right: 3 6 7
+Term (19)
+    on left: 9 10 11, on right: 6 7 8 9 10
+Dec (20)
+    on left: 12, on right: 5
+varType (21)
+    on left: 13 14, on right: 12
+
+
+State 0
+
+    0 $accept: . Goal "end of file"
+
+    "end of file"  shift, and go to state 1
+    error          shift, and go to state 2
+    NUMBER         shift, and go to state 3
+    INT            shift, and go to state 4
+    FLOAT          shift, and go to state 5
+
+    Goal     go to state 6
+    Stmt     go to state 7
+    Expr     go to state 8
+    Term     go to state 9
+    Dec      go to state 10
+    varType  go to state 11
+
+
+State 1
+
+    2 Goal: "end of file" .
+
+    $default  reduce using rule 2 (Goal)
+
+
+State 2
+
+    4 Stmt: error . NEWLINE
+
+    NEWLINE  shift, and go to state 12
+
+
+State 3
+
+   11 Term: NUMBER .
+
+    $default  reduce using rule 11 (Term)
+
+
+State 4
+
+   13 varType: INT .
+
+    $default  reduce using rule 13 (varType)
+
+
+State 5
+
+   14 varType: FLOAT .
+
+    $default  reduce using rule 14 (varType)
+
+
+State 6
+
+    0 $accept: Goal . "end of file"
+
+    "end of file"  shift, and go to state 13
+
+
+State 7
+
+    1 Goal: Stmt .
+
+    $default  reduce using rule 1 (Goal)
+
+
+State 8
+
+    3 Stmt: Expr . NEWLINE
+    6 Expr: Expr . ADD Term
+    7     | Expr . SUB Term
+
+    NEWLINE  shift, and go to state 14
+    ADD      shift, and go to state 15
+    SUB      shift, and go to state 16
+
+
+State 9
+
+    8 Expr: Term .
+    9 Term: Term . MULTI NUMBER
+   10     | Term . DIVIDE NUMBER
+
+    MULTI   shift, and go to state 17
+    DIVIDE  shift, and go to state 18
+
+    $default  reduce using rule 8 (Expr)
+
+
+State 10
+
+    5 Stmt: Dec . NEWLINE
+
+    NEWLINE  shift, and go to state 19
+
+
+State 11
+
+   12 Dec: varType . ID
+
+    ID  shift, and go to state 20
+
+
+State 12
+
+    4 Stmt: error NEWLINE .
+
+    $default  reduce using rule 4 (Stmt)
+
+
+State 13
+
+    0 $accept: Goal "end of file" .
+
+    $default  accept
+
+
+State 14
+
+    3 Stmt: Expr NEWLINE .
+
+    $default  reduce using rule 3 (Stmt)
+
+
+State 15
+
+    6 Expr: Expr ADD . Term
+
+    NUMBER  shift, and go to state 3
+
+    Term  go to state 21
+
+
+State 16
+
+    7 Expr: Expr SUB . Term
+
+    NUMBER  shift, and go to state 3
+
+    Term  go to state 22
+
+
+State 17
+
+    9 Term: Term MULTI . NUMBER
+
+    NUMBER  shift, and go to state 23
+
+
+State 18
+
+   10 Term: Term DIVIDE . NUMBER
+
+    NUMBER  shift, and go to state 24
+
+
+State 19
+
+    5 Stmt: Dec NEWLINE .
+
+    $default  reduce using rule 5 (Stmt)
+
+
+State 20
+
+   12 Dec: varType ID .
+
+    $default  reduce using rule 12 (Dec)
+
+
+State 21
+
+    6 Expr: Expr ADD Term .
+    9 Term: Term . MULTI NUMBER
+   10     | Term . DIVIDE NUMBER
+
+    MULTI   shift, and go to state 17
+    DIVIDE  shift, and go to state 18
+
+    $default  reduce using rule 6 (Expr)
+
+
+State 22
+
+    7 Expr: Expr SUB Term .
+    9 Term: Term . MULTI NUMBER
+   10     | Term . DIVIDE NUMBER
+
+    MULTI   shift, and go to state 17
+    DIVIDE  shift, and go to state 18
+
+    $default  reduce using rule 7 (Expr)
+
+
+State 23
+
+    9 Term: Term MULTI NUMBER .
+
+    $default  reduce using rule 9 (Term)
+
+
+State 24
+
+   10 Term: Term DIVIDE NUMBER .
+
+    $default  reduce using rule 10 (Term)
