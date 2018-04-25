@@ -802,104 +802,110 @@ namespace TGC {
           switch (yyn)
             {
   case 2:
-#line 65 "tgc_parser.yy" // lalr1.cc:859
+#line 64 "tgc_parser.yy" // lalr1.cc:859
     {}
 #line 808 "tgc_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 3:
-#line 66 "tgc_parser.yy" // lalr1.cc:859
+#line 65 "tgc_parser.yy" // lalr1.cc:859
     {}
 #line 814 "tgc_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 4:
-#line 69 "tgc_parser.yy" // lalr1.cc:859
+#line 66 "tgc_parser.yy" // lalr1.cc:859
     {}
 #line 820 "tgc_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 5:
-#line 70 "tgc_parser.yy" // lalr1.cc:859
+#line 69 "tgc_parser.yy" // lalr1.cc:859
     {}
 #line 826 "tgc_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 6:
-#line 71 "tgc_parser.yy" // lalr1.cc:859
+#line 70 "tgc_parser.yy" // lalr1.cc:859
     {}
 #line 832 "tgc_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 7:
+#line 71 "tgc_parser.yy" // lalr1.cc:859
+    {}
+#line 838 "tgc_parser.tab.cc" // lalr1.cc:859
+    break;
+
+  case 8:
 #line 73 "tgc_parser.yy" // lalr1.cc:859
     {
 										driver.addBinaryOperator(Expr::ADD);
 									}
-#line 840 "tgc_parser.tab.cc" // lalr1.cc:859
+#line 846 "tgc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 8:
+  case 9:
 #line 76 "tgc_parser.yy" // lalr1.cc:859
     {
 										driver.addBinaryOperator(Expr::SUB);
 									}
-#line 848 "tgc_parser.tab.cc" // lalr1.cc:859
-    break;
-
-  case 9:
-#line 79 "tgc_parser.yy" // lalr1.cc:859
-    {}
 #line 854 "tgc_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 10:
+#line 79 "tgc_parser.yy" // lalr1.cc:859
+    {}
+#line 860 "tgc_parser.tab.cc" // lalr1.cc:859
+    break;
+
+  case 11:
 #line 82 "tgc_parser.yy" // lalr1.cc:859
     {
 										int number = atoi(yystack_[0].value.as< std::string > ().c_str());
 										driver.addIntegerLiteral(number);
 										driver.addBinaryOperator(Expr::MUL);
 									}
-#line 864 "tgc_parser.tab.cc" // lalr1.cc:859
+#line 870 "tgc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 11:
+  case 12:
 #line 87 "tgc_parser.yy" // lalr1.cc:859
     {
 										driver.addBinaryOperator(Expr::DIV);
 									}
-#line 872 "tgc_parser.tab.cc" // lalr1.cc:859
+#line 878 "tgc_parser.tab.cc" // lalr1.cc:859
     break;
 
-  case 12:
+  case 13:
 #line 90 "tgc_parser.yy" // lalr1.cc:859
     {
 										int number = atoi(yystack_[0].value.as< std::string > ().c_str());
 										driver.addIntegerLiteral(number);
 									}
-#line 881 "tgc_parser.tab.cc" // lalr1.cc:859
-    break;
-
-  case 13:
-#line 96 "tgc_parser.yy" // lalr1.cc:859
-    {}
 #line 887 "tgc_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 14:
-#line 99 "tgc_parser.yy" // lalr1.cc:859
+#line 96 "tgc_parser.yy" // lalr1.cc:859
     {}
 #line 893 "tgc_parser.tab.cc" // lalr1.cc:859
     break;
 
   case 15:
-#line 100 "tgc_parser.yy" // lalr1.cc:859
+#line 99 "tgc_parser.yy" // lalr1.cc:859
     {}
 #line 899 "tgc_parser.tab.cc" // lalr1.cc:859
     break;
 
+  case 16:
+#line 100 "tgc_parser.yy" // lalr1.cc:859
+    {}
+#line 905 "tgc_parser.tab.cc" // lalr1.cc:859
+    break;
 
-#line 903 "tgc_parser.tab.cc" // lalr1.cc:859
+
+#line 909 "tgc_parser.tab.cc" // lalr1.cc:859
             default:
               break;
             }
@@ -1154,30 +1160,30 @@ namespace TGC {
   }
 
 
-  const signed char TGC_Parser::yypact_ninf_ = -10;
+  const signed char TGC_Parser::yypact_ninf_ = -6;
 
   const signed char TGC_Parser::yytable_ninf_ = -1;
 
   const signed char
   TGC_Parser::yypact_[] =
   {
-       0,   -10,    -4,   -10,   -10,   -10,    11,   -10,    -5,    -2,
-       5,    12,   -10,   -10,   -10,     8,     8,     9,    10,   -10,
-     -10,    -2,    -2,   -10,   -10
+       0,    -6,    -2,    -6,    -6,    -6,     2,    -6,    -3,     6,
+      12,    17,    -6,    -6,    -6,    -6,     1,     1,    13,    14,
+      -6,    -6,     6,     6,    -6,    -6
   };
 
   const unsigned char
   TGC_Parser::yydefact_[] =
   {
-       0,     3,     0,    12,    14,    15,     0,     2,     0,     9,
-       0,     0,     5,     1,     4,     0,     0,     0,     0,     6,
-      13,     7,     8,    10,    11
+       0,     4,     0,    13,    15,    16,     0,     3,     0,    10,
+       0,     0,     6,     1,     2,     5,     0,     0,     0,     0,
+       7,    14,     8,     9,    11,    12
   };
 
   const signed char
   TGC_Parser::yypgoto_[] =
   {
-     -10,   -10,   -10,   -10,    -9,   -10,   -10
+      -6,    -6,    18,    -6,    -5,    -6,    -6
   };
 
   const signed char
@@ -1189,37 +1195,39 @@ namespace TGC {
   const unsigned char
   TGC_Parser::yytable_[] =
   {
-       1,     2,    14,    12,    15,    16,    21,    22,     3,    17,
-      18,    13,    19,     4,     5,    20,     3,    23,    24
+       1,     2,    13,     2,    15,    12,    16,    17,     3,     3,
+       3,    22,    23,     4,     5,     4,     5,    18,    19,    20,
+      21,    24,    25,     0,    14
   };
 
-  const unsigned char
+  const signed char
   TGC_Parser::yycheck_[] =
   {
-       0,     1,     7,     7,     9,    10,    15,    16,     8,    11,
-      12,     0,     7,    13,    14,     3,     8,     8,     8
+       0,     1,     0,     1,     7,     7,     9,    10,     8,     8,
+       8,    16,    17,    13,    14,    13,    14,    11,    12,     7,
+       3,     8,     8,    -1,     6
   };
 
   const unsigned char
   TGC_Parser::yystos_[] =
   {
        0,     0,     1,     8,    13,    14,    16,    17,    18,    19,
-      20,    21,     7,     0,     7,     9,    10,    11,    12,     7,
-       3,    19,    19,     8,     8
+      20,    21,     7,     0,    17,     7,     9,    10,    11,    12,
+       7,     3,    19,    19,     8,     8
   };
 
   const unsigned char
   TGC_Parser::yyr1_[] =
   {
-       0,    15,    16,    16,    17,    17,    17,    18,    18,    18,
-      19,    19,    19,    20,    21,    21
+       0,    15,    16,    16,    16,    17,    17,    17,    18,    18,
+      18,    19,    19,    19,    20,    21,    21
   };
 
   const unsigned char
   TGC_Parser::yyr2_[] =
   {
-       0,     2,     1,     1,     2,     2,     2,     3,     3,     1,
-       3,     3,     1,     2,     1,     1
+       0,     2,     2,     1,     1,     2,     2,     2,     3,     3,
+       1,     3,     3,     1,     2,     1,     1
   };
 
 
@@ -1238,8 +1246,8 @@ namespace TGC {
   const unsigned char
   TGC_Parser::yyrline_[] =
   {
-       0,    65,    65,    66,    69,    70,    71,    73,    76,    79,
-      82,    87,    90,    96,    99,   100
+       0,    64,    64,    65,    66,    69,    70,    71,    73,    76,
+      79,    82,    87,    90,    96,    99,   100
   };
 
   // Print the state stack on the debug stream.
@@ -1321,7 +1329,7 @@ namespace TGC {
 
 #line 5 "tgc_parser.yy" // lalr1.cc:1167
 } // TGC
-#line 1325 "tgc_parser.tab.cc" // lalr1.cc:1167
+#line 1333 "tgc_parser.tab.cc" // lalr1.cc:1167
 #line 105 "tgc_parser.yy" // lalr1.cc:1168
 
 void 

@@ -61,11 +61,5 @@ namespace TGC {
 		v->visit(this);
 	}
 
-	VarDec::VarDec(char* value): val(value)
-	{
-		
-	}
-	void VarDec::accept(ASTStmtReader* v){
-		v->visit(this);
-	}
+
 }
